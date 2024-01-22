@@ -42,6 +42,16 @@ def joiner(token, status):
     time.sleep(heartbeat / 1000)
     ws.send(json.dumps({"op": 1,"d": None}))
 
+TypeError                                 Traceback (most recent call last)
+<ipython-input-3-5108525d0b43> in <module>
+      1 import websocket
+----> 2 ws = websocket.WebSocket()
+      3 ws.connect("ws://192.168.1.211/ws")
+      4 while True:
+      5     result = ws.recv()
+
+TypeError: __init__() missing 3 required positional arguments: 'environ', 'socket', and 'rfile'
+
 def run_joiner():
   os.system("clear")
   print(f"Logged in as {username}#{discriminator} ({userid}).")
